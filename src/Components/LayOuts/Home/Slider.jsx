@@ -23,19 +23,19 @@ export default function Slider() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="flex justify-center items-center gap-24 w-[80%] mx-auto p-10">
+          <div className="md:flex relative justify-center items-center md:gap-24 md:w-[80%] mx-auto md:p-10">
             <div>
               <img
-                className="md:w-[1600px] rounded-lg"
+                className="w-full h-[500px] rounded-lg"
                 src="https://th.bing.com/th/id/OIG.XddaBUC5NMAAbY.xfLgR?pid=ImgGn"
                 alt=""
               />
             </div>
-            <div className="space-y-4 text-center">
+            <div className="space-y-4 md:w-[500px] absolute top-0 h-full md:static bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] md:bg-none md:px-0 md:py-0 px-3 py-5">
               <p className="text-accent text-5xl font-bold ">
                 Unleash Your <br /> Inner Hero
               </p>
-              <p className="text-neutral opacity-70">
+              <p className="md:text-neutral text-white w-72 md:opacity-70">
                 Discover a world of adventure with our Avenger Toy Collection.
                 Join the mighty heroes on their epic quests and let your
                 imagination soar to new heights. Experience the power,
@@ -49,19 +49,19 @@ export default function Slider() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex justify-center items-center gap-24 w-[80%] mx-auto p-10">
+          <div className="md:flex relative justify-center items-center md:gap-24 md:w-[80%] mx-auto md:p-10">
             <div>
               <img
-                className="md:w-[1600px] rounded-lg"
+                className="w-full h-[500px] rounded-lg"
                 src="https://th.bing.com/th/id/OIG.qEv9lPdBGjIrQFdUPw.t?pid=ImgGn"
                 alt=""
               />
             </div>
-            <div className="space-y-4 text-center">
+            <div className="space-y-4 md:w-[500px] absolute top-0 h-full md:static bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] md:bg-none md:px-0 md:py-0 px-3 py-5">
               <p className="text-accent text-5xl font-bold ">
                 Unleash Your <br /> Inner Hero
               </p>
-              <p className="text-neutral opacity-70">
+              <p className="md:text-neutral text-white w-72 md:opacity-70">
                 Discover a world of adventure with our Avenger Toy Collection.
                 Join the mighty heroes on their epic quests and let your
                 imagination soar to new heights. Experience the power,
@@ -75,19 +75,19 @@ export default function Slider() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex justify-center items-center gap-24 w-[80%] mx-auto p-10">
+          <div className="md:flex relative justify-center items-center md:gap-24 md:w-[80%] mx-auto md:p-10">
             <div>
               <img
-                className="md:w-[1600px] rounded-lg"
+                className="w-full h-[500px] rounded-lg"
                 src="https://th.bing.com/th/id/OIG.F55gr0Ja4GEaUIwI1jwQ?pid=ImgGn"
                 alt=""
               />
             </div>
-            <div className="space-y-4 text-center">
+            <div className="space-y-4 md:w-[500px] absolute top-0 h-full md:static bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] md:bg-none md:px-0 md:py-0 px-3 py-5">
               <p className="text-accent text-5xl font-bold ">
                 Unleash Your <br /> Inner Hero
               </p>
-              <p className="text-neutral opacity-70">
+              <p className="md:text-neutral text-white w-72 md:opacity-70">
                 Discover a world of adventure with our Avenger Toy Collection.
                 Join the mighty heroes on their epic quests and let your
                 imagination soar to new heights. Experience the power,
