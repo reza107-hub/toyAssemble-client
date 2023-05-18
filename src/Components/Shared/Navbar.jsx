@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+const user = null;
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -40,18 +42,24 @@ const Navbar = () => {
               >
                 All Toys
               </Link>
-              <Link
-                to="/myToys"
-                className="text-neutral hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
-              >
-                My Toys
-              </Link>
-              <Link
-                to="/addToy"
-                className="text-neutral hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Add Toy
-              </Link>
+              {user ? (
+                <>
+                  <Link
+                    to="/myToys"
+                    className="text-neutral hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    My Toys
+                  </Link>
+                  <Link
+                    to="/addToy"
+                    className="text-neutral hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Add Toy
+                  </Link>
+                </>
+              ) : (
+                <></>
+              )}
               <Link
                 to="/blogs"
                 className="text-neutral hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
@@ -60,10 +68,28 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-          <div className="avatar hidden md:block">
-            <div className="w-12 rounded-full">
-              <img src="https://i.ibb.co/ZzjRDGG/fd9e34d0-666b-41f7-8334-43c2d480513b-removebg-preview.png" />
+          <div className="flex items-center justify-center gap-3">
+            <div className="hidden md:bloc">
+              {user ? (
+                <button className="btn btn-primary normal-case">Log out</button>
+              ) : (
+                <button className="btn btn-primary normal-case">Log in</button>
+              )}
             </div>
+            {user ? (
+              <>
+                <div
+                  className="avatar tooltip tooltip-bottom hidden md:block"
+                  data-tip="hello"
+                >
+                  <div className="w-12 rounded-full">
+                    <img src="https://i.ibb.co/ZzjRDGG/fd9e34d0-666b-41f7-8334-43c2d480513b-removebg-preview.png" />
+                  </div>
+                </div>
+              </>
+            ) : (
+              <></>
+            )}
           </div>
           <div className="flex md:hidden">
             <button
@@ -102,24 +128,39 @@ const Navbar = () => {
           >
             All Toys
           </NavLink>
-          <NavLink
-            to="myToys"
-            className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-neutral hover:text-white hover:bg-primary focus:outline-none focus:text-white focus:bg-primary"
-          >
-            My Toys
-          </NavLink>
-          <NavLink
-            to="addToy"
-            className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-neutral hover:text-white hover:bg-primary focus:outline-none focus:text-white focus:bg-primary"
-          >
-            Add Toy
-          </NavLink>
+          {user ? (
+            <>
+              <NavLink
+                to="myToys"
+                className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-neutral hover:text-white hover:bg-primary focus:outline-none focus:text-white focus:bg-primary"
+              >
+                My Toys
+              </NavLink>
+              <NavLink
+                to="addToy"
+                className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-neutral hover:text-white hover:bg-primary focus:outline-none focus:text-white focus:bg-primary"
+              >
+                Add Toy
+              </NavLink>
+            </>
+          ) : (
+            <></>
+          )}
           <NavLink
             to="blogs"
             className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-neutral hover:text-white hover:bg-primary focus:outline-none focus:text-white focus:bg-primary"
           >
             Blogs
           </NavLink>
+          {user ? (
+            <button className="mt-1 flex justify-start px-3 py-2 rounded-md text-base font-medium text-neutral hover:text-white hover:bg-primary focus:outline-none focus:text-white focus:bg-primary w-full">
+              Log out
+            </button>
+          ) : (
+            <button className="mt-1 flex justify-start px-3 py-2 rounded-md text-base font-medium text-neutral hover:text-white hover:bg-primary focus:outline-none focus:text-white focus:bg-primary w-full">
+              Log in
+            </button>
+          )}
         </div>
         <div className="avatar px-3 py-2">
           <div className="w-12 rounded-full">
