@@ -9,12 +9,11 @@ export default {
     themes: [
       {
         colors: {
-
-          "Emphasis": "#FF4081",
-          "Links": "#FF5722",
-          "Headings": "#00BCD4",
-          "Text": "#212121",
-          "Borders": "#FFD600",
+          "primary": "#FF4081",
+          "secondary": "#FF5722",
+          "accent": "#00BCD4",
+          "neutral": "#212121",
+          "info": "#FFD600",
         },
       },
     ],
