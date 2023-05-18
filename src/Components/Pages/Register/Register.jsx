@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
-const Login = () => {
+const Register = () => {
   const {
     register,
     handleSubmit,
@@ -12,8 +11,19 @@ const Login = () => {
     <div className="min-h-screen bg-slate-50 md:p-10 p-3 md:flex justify-center items-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" space-y-7 mx-auto my-10 bg-white p-4 md:w-[50vh] rounded-lg"
+        className=" space-y-7 mx-auto my-10 bg-white p-4 md:w-[70vh] rounded-lg"
       >
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-neutral">Name</span>
+          </label>
+          <input
+            type="text"
+            placeholder="name"
+            {...register("name")}
+            className="input input-bordered text-neutral"
+          />
+        </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text text-neutral">Email</span>
@@ -36,28 +46,33 @@ const Login = () => {
             {...register("password", { required: true })}
           />
         </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-neutral">Photo URL</span>
+          </label>
+          <input
+            type="url"
+            placeholder="Photo URL"
+            className="input input-bordered text-neutral"
+            {...register("photoURL", { required: true })}
+          />
+        </div>
         {errors.exampleRequired && <span>This field is required</span>}
 
         <div className="form-control mt-6">
-          <input className="btn btn-primary" type="submit" value="Login" />
+          <input className="btn btn-primary" type="submit" value="Register" />
         </div>
         <div>
           <p className="text-neutral">
-            New at here?{" "}
-            <Link to="/register" className="link link-secondary">
-              Register
+            Already have an account?{" "}
+            <Link to="/login" className="link link-secondary">
+              Login
             </Link>
           </p>
-        </div>
-        <div className="divider"></div>
-        <div className="">
-          <button className="btn justify-between w-full normal-case btn-outline btn-secondary">
-            Log in with Google <FaGoogle />
-          </button>
         </div>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Register;

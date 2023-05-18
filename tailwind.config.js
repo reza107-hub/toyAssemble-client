@@ -7,6 +7,7 @@ export default {
 
   daisyui: {
     themes: [
+
       {
         colors: {
           "primary": "#FF4081",
@@ -21,4 +22,3 @@ export default {
   },
   plugins: [require("daisyui")],
 }
-
