@@ -69,11 +69,15 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex items-center justify-center gap-3">
-            <div className="hidden md:bloc">
+            <div className="hidden md:block">
               {user ? (
                 <button className="btn btn-primary normal-case">Log out</button>
               ) : (
-                <button className="btn btn-primary normal-case">Log in</button>
+                <Link to="/login">
+                  <button className="btn btn-primary normal-case">
+                    Log in
+                  </button>
+                </Link>
               )}
             </div>
             {user ? (
