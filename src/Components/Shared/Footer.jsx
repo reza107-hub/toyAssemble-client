@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { BsFacebook, BsGithub, BsTwitter } from "react-icons/bs";
 import { FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+import { MdLocationOn, MdOutlineMailOutline } from "react-icons/md";
 const Footer = () => {
   return (
     <footer className="footer p-10 bg-base-200 text-base-content">
@@ -28,18 +29,24 @@ const Footer = () => {
         </Link>
       </div>
       <div>
-        <span className="footer-title text-primary opacity-100">Company</span>
+        <span className="footer-title text-primary opacity-100">
+          Information
+        </span>
         <Link to="#" className="link link-hover link-accent">
           About us
         </Link>
         <Link to="#" className="link link-hover link-accent">
           Contact
         </Link>
+
         <Link to="#" className="link link-hover link-accent">
-          Jobs
+          Returns & Exchanges
         </Link>
         <Link to="#" className="link link-hover link-accent">
-          Press kit
+          Shipping & Delivery
+        </Link>
+        <Link to="#" className="link link-hover link-accent">
+          Shipping
         </Link>
       </div>
       <div>
@@ -54,7 +61,7 @@ const Footer = () => {
           Cookie policy
         </Link>
       </div>
-      <div className="pt-4">
+      <div className="">
         <p className="text-sm text-gray-400">
           &copy; {new Date().getFullYear()} ToyAssemble. All rights reserved.
         </p>
@@ -63,6 +70,12 @@ const Footer = () => {
           <Link to="#" className="underline">
             ToyAssemble Team
           </Link>
+        </p>
+        <p className="flex items-center justify-center gap-3 mt-3">
+          <MdLocationOn /> Charkhai, BeaniBazar, Sylhet
+        </p>
+        <p className="flex items-center justify-center gap-3 mt-3">
+          <MdOutlineMailOutline /> rashidaminur104@gmail.com
         </p>
         <div className="flex space-x-4 mt-4">
           <a
