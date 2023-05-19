@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import Category from "./Category/Category";
 import Gallery from "./Gallery/Gallery";
 
 const Home = () => {
@@ -6,9 +7,12 @@ const Home = () => {
     <div className="bg-slate-50">
       <Banner />
       <div>
-        <p className="text-primary font-bold text-3xl text-center mt-20">Featured Gallery</p>
+        <p className="text-primary font-bold text-3xl text-center mt-20">
+          Featured Gallery
+        </p>
         <Gallery />
       </div>
+      <Category />
     </div>
   );
 };

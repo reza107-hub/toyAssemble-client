@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 .divider {
   display: flex;
   flex-direction: row;
@@ -36,4 +36,8 @@
 }
 .divider:not(:empty) {
   gap: 1rem /* 16px */;
+}
+
+.font {
+  font-family: "Roboto Mono", monospace;
 }

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "X-Men, Return of Wolverine",
+    "image": "https://i.ibb.co/fvXSP90/Ag-ADHAo-AAu-G2-OFc-removebg-preview.png",
+    "price": 19.99,
+    "rating": 4.5,
+    "category": "X-Man"
+  },
+  {
+    "id": 2,
+    "name": "Marvel Avengers Action Figures",
+    "image": "https://i.ibb.co/7WrFHn5/Ag-AD9-Qk-AAu-G2-OFc-removebg-preview.png",
+    "price": 14.99,
+    "rating": 4.2,
+    "category": "Avengers"
+  },
+  {
+    "id": 3,
+    "name": "X-Men Classic Avalanche",
+    "image": "https://i.ibb.co/YL0gwf5/Ag-ADHQo-AAu-G2-OFc-removebg-preview.png",
+    "price": 9.99,
+    "rating": 4.8,
+    "category": "X-Man"
+  },
+  {
+    "id": 4,
+    "name": "Infinity Gauntlet",
+    "image": "https://i.ibb.co/1KNNtyq/Ag-AD8-Ak-AAu-G2-OFc-removebg-preview.png",
+    "price": 24.99,
+    "rating": 4.6,
+    "category": "Avengers"
+  },
+  {
+    "id": 5,
+    "name": "Retro Fantastic Four Marvel",
+    "image": "https://i.ibb.co/whjK1L7/F2796-PROD-MVL-Devil-Joy-0002-Online-300-DPI-removebg-preview.png",
+    "price": 29.99,
+    "rating": 4.9,
+    "category": "Fantastic Four"
+  },
+  {
+    "id": 6,
+    "name": "Dr. Doom",
+    "image": "https://i.ibb.co/TLhGfQ6/713d-Ntm-UKi-L-AC-SL1500-removebg-preview.png",
+    "price": 12.99,
+    "rating": 4.4,
+    "category": "Fantastic Four"
+  }
+]
