@@ -1,50 +1,74 @@
 [
   {
-    "id": 1,
-    "name": "X-Men, Return of Wolverine",
-    "image": "https://i.ibb.co/fvXSP90/Ag-ADHAo-AAu-G2-OFc-removebg-preview.png",
-    "price": 19.99,
-    "rating": 4.5,
-    "category": "X-Man"
+  "id": 1,
+  "name": "X-Men, Return of Wolverine",
+  "image": "https://i.ibb.co/fvXSP90/Ag-ADHAo-AAu-G2-OFc-removebg-preview.png",
+  "price": 19.99,
+  "rating": 4.5,
+  "category": "X Man",
+  "seller": "Aminur Rashid Reza",
+  "seller_email": "rashidaminur104@gmail.com",
+  "quantity": 10,
+  "description": "Experience the thrilling return of Wolverine in this action-packed X-Men adventure. Join Wolverine as he battles his enemies, uncovers his past, and faces new challenges. This comic book is filled with gripping storytelling, stunning artwork, and intense action sequences that will keep you hooked from start to finish. Get ready for a wild ride with X-Men, Return of Wolverine!"
   },
   {
-    "id": 2,
-    "name": "Marvel Avengers Action Figures",
-    "image": "https://i.ibb.co/7WrFHn5/Ag-AD9-Qk-AAu-G2-OFc-removebg-preview.png",
-    "price": 14.99,
-    "rating": 4.2,
-    "category": "Avengers"
+  "id": 2,
+  "name": "Marvel Avengers Action Figures",
+  "image": "https://i.ibb.co/7WrFHn5/Ag-AD9-Qk-AAu-G2-OFc-removebg-preview.png",
+  "price": 14.99,
+  "rating": 4.2,
+  "category": "Avengers",
+  "seller": "Aminur Rashid Reza",
+  "seller_email": "rashidaminur104@gmail.com",
+  "quantity": 5,
+  "description": "Bring home the excitement of the Avengers with these action figures. Join Iron Man, Captain America, Thor, and the rest of the team as they battle against villains to save the world. Each action figure is meticulously designed with attention to detail, capturing the essence of your favorite Avengers characters. Let your imagination soar and create epic battles and heroic adventures with these Marvel Avengers Action Figures!"
   },
   {
-    "id": 3,
-    "name": "X-Men Classic Avalanche",
-    "image": "https://i.ibb.co/YL0gwf5/Ag-ADHQo-AAu-G2-OFc-removebg-preview.png",
-    "price": 9.99,
-    "rating": 4.8,
-    "category": "X-Man"
+  "id": 3,
+  "name": "X-Men Classic Avalanche",
+  "image": "https://i.ibb.co/YL0gwf5/Ag-ADHQo-AAu-G2-OFc-removebg-preview.png",
+  "price": 9.99,
+  "rating": 4.8,
+  "category": "X Man",
+  "seller": "Aminur Rashid Reza",
+  "seller_email": "rashidaminur104@gmail.com",
+  "quantity": 7,
+  "description": "Unleash the power of X-Men with this Classic Avalanche action figure. Join the mutant superhero team as they fight against evil forces threatening the world. This action figure features incredible detailing, articulation, and a realistic design that brings the character to life. Let your imagination run wild and recreate your favorite X-Men moments with X-Men Classic Avalanche!"
   },
   {
-    "id": 4,
-    "name": "Infinity Gauntlet",
-    "image": "https://i.ibb.co/1KNNtyq/Ag-AD8-Ak-AAu-G2-OFc-removebg-preview.png",
-    "price": 24.99,
-    "rating": 4.6,
-    "category": "Avengers"
+  "id": 4,
+  "name": "Infinity Gauntlet",
+  "image": "https://i.ibb.co/1KNNtyq/Ag-AD8-Ak-AAu-G2-OFc-removebg-preview.png",
+  "price": 24.99,
+  "rating": 4.6,
+  "category": "Avengers",
+  "seller": "Aminur Rashid Reza",
+  "seller_email": "rashidaminur104@gmail.com",
+  "quantity": 3,
+  "description": "Hold the power of the universe in your hands with the Infinity Gauntlet. This replica of the legendary artifact from the Avengers movie series is a must-have for any Marvel fan. With its intricate design and glowing stones, the Infinity Gauntlet is a true collector's item. Display it proudly or recreate epic scenes from the movies. Harness the power of the Infinity Gauntlet and imagine the limitless possibilities!"
   },
   {
-    "id": 5,
-    "name": "Retro Fantastic Four Marvel",
-    "image": "https://i.ibb.co/whjK1L7/F2796-PROD-MVL-Devil-Joy-0002-Online-300-DPI-removebg-preview.png",
-    "price": 29.99,
-    "rating": 4.9,
-    "category": "Fantastic Four"
+  "id": 5,
+  "name": "Retro Fantastic Four Marvel",
+  "image": "https://i.ibb.co/whjK1L7/F2796-PROD-MVL-Devil-Joy-0002-Online-300-DPI-removebg-preview.png",
+  "price": 29.99,
+  "rating": 4.9,
+  "category": "Fantastic Four",
+  "seller": "Aminur Rashid Reza",
+  "seller_email": "rashidaminur104@gmail.com",
+  "quantity": 2,
+  "description": "Step back in time with the Retro Fantastic Four Marvel action figures. Relive the adventures of Mr. Fantastic, Invisible Woman, Human Torch, and The Thing as they protect the world from threats. These vintage-style action figures capture the essence of the Fantastic Four comics from the past, with their classic costumes and iconic poses. Add a touch of nostalgia to your collection with the Retro Fantastic Four Marvel action figures!"
   },
   {
-    "id": 6,
-    "name": "Dr. Doom",
-    "image": "https://i.ibb.co/TLhGfQ6/713d-Ntm-UKi-L-AC-SL1500-removebg-preview.png",
-    "price": 12.99,
-    "rating": 4.4,
-    "category": "Fantastic Four"
+  "id": 6,
+  "name": "Dr. Doom",
+  "image": "https://i.ibb.co/TLhGfQ6/713d-Ntm-UKi-L-AC-SL1500-removebg-preview.png",
+  "price": 12.99,
+  "rating": 4.4,
+  "category": "Fantastic Four",
+  "seller": "Aminur Rashid Reza",
+  "seller_email": "rashidaminur104@gmail.com",
+  "quantity": 9,
+  "description": "Embrace your dark side with Dr. Doom. This action figure depicts the iconic Marvel supervillain known for his intelligence and powerful armor. Join forces with Dr. Doom or pit him against your favorite superheroes. With intricate detailing and superb craftsmanship, this action figure is a must-have for any Marvel enthusiast. Add the enigmatic Dr. Doom to your collection and let the battle for supremacy begin!"
   }
-]
+  ]

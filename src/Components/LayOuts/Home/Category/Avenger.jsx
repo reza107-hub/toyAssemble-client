@@ -8,15 +8,15 @@ import Swal from "sweetalert2";
 const Avenger = ({ toy }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const userLoggedInOrNot = () => {
+  const userLoggedInOrNot = (id) => {
     if (user) {
-      navigate(`/toy/:${toy.id}`);
+      navigate(`/toy/${id}`);
     } else {
       Swal.fire({
         icon: "error",
         text: "You have to login first",
       });
-      navigate(`/toy/:${toy.id}`);
+      navigate(`/toy/${id}`);
     }
   };
   return (
@@ -34,7 +34,7 @@ const Avenger = ({ toy }) => {
           </p>
           <div className="card-actions justify-end">
             <button
-              onClick={userLoggedInOrNot}
+              onClick={() => userLoggedInOrNot(toy.id)}
               className="btn btn-outline btn-primary normal-case"
             >
               View Details

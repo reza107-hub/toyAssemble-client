@@ -30,11 +30,12 @@ const OurTeam = () => {
         </h1>
         <section className="py-16">
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 w-[90%] mx-auto gap-8">
               {teamMembers.map((member) => (
                 <div
                   key={member.name}
-                  className="border border-info p-8 rounded-lg shadow-lg"
+                  className="border border-info p-8 rounded-lg shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105
+                  "
                 >
                   <img
                     src={member.avatar}
