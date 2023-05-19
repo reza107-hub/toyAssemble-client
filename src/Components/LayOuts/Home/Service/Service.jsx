@@ -4,7 +4,7 @@ const Service = () => {
       <p className="text-primary my-10 text-4xl font-bold text-center">
         Our service
       </p>
-      <div className="flex justify-around gap-10 items-center">
+      <div className="flex md:flex-row flex-col justify-around gap-10 items-center">
         <div className="md:w-full">
           <img
             className=" h-[500px]"
