@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateProf } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -13,6 +13,7 @@ const Register = () => {
     console.log(data);
     createUser(data.email, data.password)
       .then((result) => {
+        updateProf(data.name, data.photoURL);
         console.log(result.user);
       })
       .catch((error) => {

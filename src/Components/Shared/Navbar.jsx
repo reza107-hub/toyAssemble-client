@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
-const user = null;
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const { user, logOut } = useContext(AuthContext);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
+  const handleLogOut = () => {
+    logOut();
+  };
   return (
     <nav className="">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +72,12 @@ const Navbar = () => {
           <div className="flex items-center justify-center gap-3">
             <div className="hidden md:block">
               {user ? (
-                <button className="btn btn-primary normal-case font-bold">Log out</button>
+                <button
+                  onClick={handleLogOut}
+                  className="btn btn-primary normal-case font-bold"
+                >
+                  Log out
+                </button>
               ) : (
                 <Link to="/login">
                   <button className="btn btn-primary normal-case font-bold">
@@ -84,10 +90,10 @@ const Navbar = () => {
               <>
                 <div
                   className="avatar tooltip tooltip-bottom hidden md:block"
-                  data-tip="hello"
+                  data-tip={user.displayName}
                 >
                   <div className="w-12 rounded-full">
-                    <img src="https://i.ibb.co/ZzjRDGG/fd9e34d0-666b-41f7-8334-43c2d480513b-removebg-preview.png" />
+                    <img src={user.photoURL} />
                   </div>
                 </div>
               </>
