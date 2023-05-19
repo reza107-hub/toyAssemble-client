@@ -1,7 +1,18 @@
+import { useEffect } from "react";
 import "./Gallery.css";
 import SingleCard from "./SingleCard";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Gallery = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, // Animation duration in milliseconds
+      easing: "ease-in-out", // Animation easing
+      delay: 200, // Delay between animations in milliseconds
+      offset: 120, // Offset (in pixels) from the element's position before triggering the animation
+    });
+  }, []);
   const toyData = [
     {
       id: 1,
@@ -62,7 +73,11 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="w-[80%] mx-auto mt-16 gap-12 grid md:grid-cols-3">
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-center"
+      className="w-[80%] mx-auto mt-16 gap-12 grid md:grid-cols-3"
+    >
       {toyData.map((toy) => (
         <SingleCard key={toy.id} toy={toy}></SingleCard>
       ))}

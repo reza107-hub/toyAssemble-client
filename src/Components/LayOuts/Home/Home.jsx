@@ -4,7 +4,9 @@ import Gallery from "./Gallery/Gallery";
 import OurTeam from "./OurTeam/OurTeam";
 import Service from "./Service/Service";
 
+
 const Home = () => {
+  
   return (
     <div className="bg-slate-50">
       <Banner />
