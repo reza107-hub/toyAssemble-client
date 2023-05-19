@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 const Register = () => {
   const { createUser, updateProf } = useContext(AuthContext);
   const {
@@ -11,13 +12,27 @@ const Register = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
+    if (data.password.length<6) {
+      return Swal.fire({
+        icon: "error",
+        text: "password must contain 6 character",
+      });
+    }
     createUser(data.email, data.password)
       .then((result) => {
         updateProf(data.name, data.photoURL);
+        Swal.fire({
+          icon: "success",
+          text: "User Created Successfully",
+        });
         console.log(result.user);
       })
       .catch((error) => {
         console.log(error);
+        Swal.fire({
+          icon: "error",
+          text: `${error.message}`,
+        });
       });
   };
   return (

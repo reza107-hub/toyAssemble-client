@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 const Login = () => {
   const { signIn, logInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -18,20 +19,36 @@ const Login = () => {
     signIn(data.email, data.password)
       .then((result) => {
         console.log(result.user);
+        Swal.fire({
+          icon: "success",
+          text: "User Logged Successfully",
+        });
         navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
+        Swal.fire({
+          icon: "error",
+          text: `${error.message}`,
+        });
       });
   };
   const handleLogInWithGoogle = () => {
     logInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        Swal.fire({
+          icon: "success",
+          text: "User Logged Successfully",
+        });
         navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
+        Swal.fire({
+          icon: "error",
+          text: `${error.message}`,
+        });
       });
   };
   return (
