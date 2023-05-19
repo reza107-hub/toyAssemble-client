@@ -4,7 +4,7 @@ import "@smastrom/react-rating/style.css";
 const XmanToy = ({ toy }) => {
   return (
     <div>
-      <div className="card md:w-[275px] border border-info py-4 bg-slate-100 text-neutral font-serif">
+      <div className="card md:w-[400px] border border-info py-4 bg-slate-100 text-neutral font-serif">
         <figure className="px-10 pt-10">
           <img src={toy.image} alt="" className="rounded-xl h-48 w-48" />
         </figure>
