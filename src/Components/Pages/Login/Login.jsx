@@ -1,10 +1,13 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, logInWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -15,6 +18,17 @@ const Login = () => {
     signIn(data.email, data.password)
       .then((result) => {
         console.log(result.user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const handleLogInWithGoogle = () => {
+    logInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
@@ -24,7 +38,7 @@ const Login = () => {
     <div className="min-h-screen bg-slate-50 md:p-10 p-3 md:flex justify-center items-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" space-y-7 mx-auto my-10 bg-white p-4 md:w-[50vh] rounded-lg"
+        className=" space-y-7 mx-auto my-10 bg-white p-4 md:w-[70vh] rounded-lg"
       >
         <div className="form-control">
           <label className="label">
@@ -63,7 +77,10 @@ const Login = () => {
         </div>
         <div className="divider"></div>
         <div className="">
-          <button className="btn justify-between w-full normal-case btn-outline btn-secondary">
+          <button
+            onClick={handleLogInWithGoogle}
+            className="btn justify-between w-full normal-case btn-outline btn-secondary"
+          >
             Log in with Google <FaGoogle />
           </button>
         </div>

@@ -1,7 +1,24 @@
 import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
+import { useContext } from "react";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 const Avenger = ({ toy }) => {
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const userLoggedInOrNot = () => {
+    if (user) {
+      navigate(`/toy/:${toy.id}`);
+    } else {
+      Swal.fire({
+        icon: "error",
+        text: "You have to login first",
+      });
+      navigate(`/toy/:${toy.id}`);
+    }
+  };
   return (
     <div>
       <div className="card md:w-[400px] border border-info py-4 bg-slate-100 text-neutral font-serif">
@@ -16,7 +33,10 @@ const Avenger = ({ toy }) => {
             <Rating style={{ maxWidth: 100 }} value={toy.rating} readOnly />
           </p>
           <div className="card-actions justify-end">
-            <button className="btn btn-outline btn-primary normal-case">
+            <button
+              onClick={userLoggedInOrNot}
+              className="btn btn-outline btn-primary normal-case"
+            >
               View Details
             </button>
           </div>

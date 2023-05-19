@@ -90,10 +90,10 @@ const Navbar = () => {
               <>
                 <div
                   className="avatar tooltip tooltip-bottom hidden md:block"
-                  data-tip={user.displayName}
+                  data-tip={user?.displayName}
                 >
                   <div className="w-12 rounded-full">
-                    <img src={user.photoURL} />
+                    <img src={user?.photoURL} />
                   </div>
                 </div>
               </>
@@ -163,18 +163,26 @@ const Navbar = () => {
             Blogs
           </NavLink>
           {user ? (
-            <button className="mt-1 flex justify-start px-3 py-2 rounded-md text-base font-medium text-neutral hover:text-white hover:bg-primary focus:outline-none focus:text-white focus:bg-primary w-full">
+            <button
+              onClick={handleLogOut}
+              className="mt-1 flex justify-start px-3 py-2 rounded-md text-base font-medium text-neutral hover:text-white hover:bg-primary focus:outline-none focus:text-white focus:bg-primary w-full"
+            >
               Log out
             </button>
           ) : (
-            <button className="mt-1 flex justify-start px-3 py-2 rounded-md text-base font-medium text-neutral hover:text-white hover:bg-primary focus:outline-none focus:text-white focus:bg-primary w-full">
-              Log in
-            </button>
+            <Link to="/login">
+              <button className="mt-1 flex justify-start px-3 py-2 rounded-md text-base font-medium text-neutral hover:text-white hover:bg-primary focus:outline-none focus:text-white focus:bg-primary w-full">
+                Log in
+              </button>
+            </Link>
           )}
         </div>
-        <div className="avatar px-3 py-2">
+        <div
+          className="avatar tooltip tooltip-right px-3 py-2"
+          data-tip={user?.displayName}
+        >
           <div className="w-12 rounded-full">
-            <img src="https://i.ibb.co/ZzjRDGG/fd9e34d0-666b-41f7-8334-43c2d480513b-removebg-preview.png" />
+            <img src={user?.photoURL} />
           </div>
         </div>
       </div>

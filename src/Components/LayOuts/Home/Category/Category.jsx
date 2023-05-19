@@ -20,35 +20,41 @@ const Category = () => {
   );
   console.log(xManToys);
   return (
-    <Tabs className="mt-20 w-[80%] mx-auto"> 
-      <TabList className="text-center text-neutral border">
-        <Tab>X-Man</Tab>
-        <Tab>Avengers</Tab>
-        <Tab>Fantastic Four</Tab>
-      </TabList>
+    <div>
+      <div className="mt-20">
+        <p className="font-bold text-center text-accent font">TOP CATEGORIES</p>
+        <p className="text-3xl text-center mt-3 text-primary font-bold font-serif">Shop By Categories</p>
+      </div>
+      <Tabs className="mt-20 w-[80%] mx-auto">
+        <TabList className="text-center text-neutral border">
+          <Tab>X-Man</Tab>
+          <Tab>Avengers</Tab>
+          <Tab>Fantastic Four</Tab>
+        </TabList>
 
-      <TabPanel>
-        <div className="flex flex-wrap justify-around mt-2">
-          {xManToys.map((toy) => (
-            <XmanToy key={toy.id} toy={toy} />
-          ))}
-        </div>
-      </TabPanel>
-      <TabPanel>
-        <div className="flex flex-wrap justify-around mt-2">
-          {avengersToys.map((toy) => (
-            <Avenger key={toy.id} toy={toy} />
-          ))}
-        </div>
-      </TabPanel>
-      <TabPanel>
-        <div className="flex flex-wrap justify-around mt-2">
-          {fantasticFourToys.map((toy) => (
-            <FantasticFour key={toy.id} toy={toy} />
-          ))}
-        </div>
-      </TabPanel>
-    </Tabs>
+        <TabPanel>
+          <div className="flex flex-wrap gap-5 justify-around mt-2">
+            {xManToys.map((toy) => (
+              <XmanToy key={toy.id} toy={toy} />
+            ))}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="flex flex-wrap gap-5 justify-around mt-2">
+            {avengersToys.map((toy) => (
+              <Avenger key={toy.id} toy={toy} />
+            ))}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="flex flex-wrap gap-5 justify-around mt-2">
+            {fantasticFourToys.map((toy) => (
+              <FantasticFour key={toy.id} toy={toy} />
+            ))}
+          </div>
+        </TabPanel>
+      </Tabs>
+    </div>
   );
 };
 

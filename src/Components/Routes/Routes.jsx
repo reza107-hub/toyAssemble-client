@@ -3,11 +3,13 @@ import App from "../../App";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Home from "../LayOuts/Home/Home";
-import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import ErrorPage from "../LayOuts/ErrorPage/ErrorPage";
 import AllToys from "../Pages/AllToys/AllToys";
 import MyToy from "../Pages/MyToy/MyToy";
 import AddToy from "../Pages/Add Toy/AddToy";
 import Blogs from "../Pages/Blogs/Blogs";
+import PrivateRoute from "./PrivateRoute";
+import ToyDetails from "../Pages/ToyDetailss/ToyDetails";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +44,14 @@ export const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs />,
+      },
+      {
+        path: "/toy/:id",
+        element: (
+          <PrivateRoute>
+            <ToyDetails />
+          </PrivateRoute>
+        ),
       },
     ],
   },
