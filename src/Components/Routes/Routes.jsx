@@ -52,6 +52,7 @@ export const router = createBrowserRouter([
             <ToyDetails />
           </PrivateRoute>
         ),
+        loader: () => fetch("category.json"),
       },
     ],
   },
