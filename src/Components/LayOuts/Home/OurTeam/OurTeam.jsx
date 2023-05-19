@@ -41,9 +41,8 @@ const OurTeam = () => {
                     alt={member.name}
                     className="w-24 h-24 mx-auto mb-4 rounded-full"
                   />
-                  <h2 className="text-2xl font-bold mb-4 text-accent">
-                    {member.name} - {member.position}
-                  </h2>
+                  <h2 className="text-2xl font-bold text-accent">{member.name}</h2>
+                  <h3 className="text-lg text-gray-500 mb-4">{member.position}</h3>
                   <p className="text-gray-500 mb-6">{member.quote}</p>
                 </div>
               ))}
