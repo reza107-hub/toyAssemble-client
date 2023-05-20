@@ -124,7 +124,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className={`md:hidden ${isMenuOpen ? "" : "hidden"}`}>
+      <div className={`md:hidden ${isMenuOpen ? "z-0" : "hidden"}`}>
         <div className="px-2 pt-2 pb-3 sm:px-3">
           <NavLink
             to="/"
@@ -177,14 +177,18 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-        <div
-          className="avatar tooltip tooltip-right px-3 py-2"
-          data-tip={user?.displayName}
-        >
-          <div className="w-12 rounded-full">
-            <img src={user?.photoURL} />
+        {user ? (
+          <div
+            className="avatar tooltip tooltip-right px-3 py-2"
+            data-tip={user?.displayName}
+          >
+            <div className="w-12 rounded-full">
+              <img src={user?.photoURL} />
+            </div>
           </div>
-        </div>
+        ) : (
+          <></>
+        )}
       </div>
     </nav>
   );

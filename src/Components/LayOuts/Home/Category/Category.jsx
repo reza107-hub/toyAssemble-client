@@ -4,6 +4,8 @@ import "react-tabs/style/react-tabs.css";
 import XmanToy from "./xManToy";
 import FantasticFour from "./FantasticFour";
 import Avenger from "./Avenger.jsx";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Category = () => {
   const [toys, setToys] = useState([]);
@@ -22,13 +24,20 @@ const Category = () => {
   const toggleShowAllToys = () => {
     setShowAllToys(!showAllToys);
   };
-
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      delay: 0,
+      offset: 120,
+    });
+  }, []);
   return (
     <div>
       <div className="mt-20">
         <p className="font-bold text-center text-accent font">TOP CATEGORIES</p>
         <p className="text-3xl text-center mt-3 text-primary font-bold font-serif">
-          Shop By Categories
+          Toys By Categories
         </p>
       </div>
       <Tabs className="mt-20 w-[80%] mx-auto">
@@ -40,7 +49,10 @@ const Category = () => {
 
         {categories.map((category) => (
           <TabPanel key={category}>
-            <div className="grid md:grid-cols-3 gap-5 justify-around mt-2">
+            <div
+              data-aos="fade-up"
+              className="grid md:grid-cols-3 gap-5 justify-around mt-2"
+            >
               {showAllToys
                 ? toys
                     .filter((toy) => toy.category === category)

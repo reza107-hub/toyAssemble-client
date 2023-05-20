@@ -4,14 +4,14 @@ import { useEffect } from "react";
 const Service = () => {
   useEffect(() => {
     AOS.init({
-      duration: 2000, // Animation duration in milliseconds
+      duration: 800, // Animation duration in milliseconds
       easing: "ease-in-out", // Animation easing
-      delay: 500, // Delay between animations in milliseconds
+      delay: 150, // Delay between animations in milliseconds
       offset: 120, // Offset (in pixels) from the element's position before triggering the animation
     });
   }, []);
   return (
-    <div className="mt-20 w-[80%] mx-auto">
+    <div className="mt-20 md:w-[80%] mx-auto">
       <p className="text-primary my-10 text-4xl font-bold text-center">
         Our service
       </p>
@@ -22,11 +22,11 @@ const Service = () => {
         >
           <img
             className=" h-[500px]"
-            src="https://i.ibb.co/jzNJG1C/image.png"
+            src="https://i.ibb.co/tB4vrV3/istockphoto-1312940184-612x612.jpg"
             alt=""
           />
         </div>
-        <div className="text-neutral space-y-6 md:w-1/2">
+        <div className="text-neutral text-center md:text-left space-y-6 md:w-1/2">
           <h1 className="text-4xl font-bold text-accent">
             Unleash Joyful Imaginations with Our Toy Market Services
           </h1>

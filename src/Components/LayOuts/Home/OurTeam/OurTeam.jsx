@@ -4,9 +4,9 @@ import { useEffect } from "react";
 const OurTeam = () => {
   useEffect(() => {
     AOS.init({
-      duration: 2000, // Animation duration in milliseconds
+      duration: 800, // Animation duration in milliseconds
       easing: "ease-in-out", // Animation easing
-      delay: 500, // Delay between animations in milliseconds
+      delay: 150, // Delay between animations in milliseconds
       offset: 120, // Offset (in pixels) from the element's position before triggering the animation
     });
   }, []);

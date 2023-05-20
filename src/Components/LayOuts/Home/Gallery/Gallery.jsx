@@ -7,10 +7,10 @@ import "aos/dist/aos.css";
 const Gallery = () => {
   useEffect(() => {
     AOS.init({
-      duration: 2000, // Animation duration in milliseconds
-      easing: "ease-in-out", // Animation easing
-      delay: 100, // Delay between animations in milliseconds
-      offset: 120, // Offset (in pixels) from the element's position before triggering the animation
+      duration: 800,
+      easing: "ease-in-out", 
+      delay: 150, 
+      offset: 120, 
     });
   }, []);
   const toyData = [
@@ -75,7 +75,6 @@ const Gallery = () => {
   return (
     <div
       data-aos="fade-up"
-      data-aos-anchor-placement="top-center"
       className="w-[80%] mx-auto mt-16 gap-12 grid md:grid-cols-3"
     >
       {toyData.map((toy) => (
