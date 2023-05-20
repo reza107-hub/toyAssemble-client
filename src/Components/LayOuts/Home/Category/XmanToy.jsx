@@ -28,13 +28,13 @@ const XmanToy = ({ toy }) => {
         <div className="card-body">
           <h2 className="card-title font text-accent">{toy.name}</h2>
           <p className="font text-secondary">Price: ${toy.price}</p>
-          <p className="font text-secondary flex items-center">
-            Rating:{" "}
+          <div className="font text-secondary flex items-center">
+            Rating:
             <Rating style={{ maxWidth: 100 }} value={toy.rating} readOnly />
-          </p>
+          </div>
           <div className="card-actions justify-end">
             <button
-              onClick={()=>userLoggedInOrNot(toy.id)}
+              onClick={()=>userLoggedInOrNot(toy._id)}
               className="btn btn-outline btn-primary normal-case"
             >
               View Details

@@ -7,7 +7,7 @@ import Avenger from "./Avenger.jsx";
 const Category = () => {
   const [toys, setToys] = useState([]);
   useEffect(() => {
-    fetch("category.json")
+    fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -18,7 +18,6 @@ const Category = () => {
   const fantasticFourToys = toys.filter(
     (toy) => toy.category == "Fantastic Four"
   );
-  console.log(xManToys);
   return (
     <div>
       <div className="mt-20">
@@ -37,21 +36,21 @@ const Category = () => {
         <TabPanel>
           <div className="flex flex-wrap gap-5 justify-around mt-2">
             {xManToys.map((toy) => (
-              <XmanToy key={toy.id} toy={toy} />
+              <XmanToy key={toy._id} toy={toy} />
             ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="flex flex-wrap gap-5 justify-around mt-2">
             {avengersToys.map((toy) => (
-              <Avenger key={toy.id} toy={toy} />
+              <Avenger key={toy._id} toy={toy} />
             ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="flex flex-wrap gap-5 justify-around mt-2">
             {fantasticFourToys.map((toy) => (
-              <FantasticFour key={toy.id} toy={toy} />
+              <FantasticFour key={toy._id} toy={toy} />
             ))}
           </div>
         </TabPanel>

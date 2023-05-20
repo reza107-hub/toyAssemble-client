@@ -30,7 +30,7 @@ const AllToys = () => {
     }
   };
   useEffect(() => {
-    fetch("category.json")
+    fetch("http://localhost:5000/toys")
       .then((response) => response.json())
       .then((data) => setToys(data))
       .catch((error) => console.log(error));
@@ -69,7 +69,7 @@ const AllToys = () => {
           </thead>
           <tbody>
             {filteredToys.map((toy) => (
-              <tr className="text-center" key={toy.id}>
+              <tr className="text-center" key={toy._id}>
                 <td className="py-2 px-4 text-neutral border-b">
                   {toy.seller}
                 </td>
@@ -83,7 +83,7 @@ const AllToys = () => {
                 </td>
                 <td className="py-2 px-4 text-neutral border-b">
                   <button
-                    onClick={() => userLoggedInOrNot(toy.id)}
+                    onClick={() => userLoggedInOrNot(toy._id)}
                     className="text-secondary font-medium"
                   >
                     View Details
