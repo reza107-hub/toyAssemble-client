@@ -1,18 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useTitle from "../../../useTitle";
 import { MdOutlineRemoveCircle } from "react-icons/md";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const MyToy = () => {
   useTitle("MY Toys");
   const [toys, setToys] = useState([]);
+  const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch(`http://localhost:5000/toysQuery?email=${user?.email}`)
       .then((response) => response.json())
       .then((data) => setToys(data))
       .catch((error) => console.log(error));
-  }, [toys]);
+  }, [toys, user?.email]);
 
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/toys/${id}`, {
