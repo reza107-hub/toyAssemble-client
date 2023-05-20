@@ -14,7 +14,6 @@ This project is a client-side web application that focuses on creating an intera
 
 - **Responsive design:** Ensure that the website is responsive and adapts well to different screen sizes, providing an optimal viewing experience on both desktop and mobile devices.
 
-
 ## Live Link
 
-[Add your client-side live link to your website here]
+https://assaignment11-63a57.web.app

@@ -33,7 +33,8 @@ export const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys />,
-        loader: ()=> fetch('http://localhost:5000/totalToys')
+        loader: () =>
+          fetch("https://toy-market-server-fawn.vercel.app/totalToys"),
       },
       {
         path: "/myToys",
@@ -62,7 +63,7 @@ export const router = createBrowserRouter([
             <ToyDetails />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/toys"),
+        loader: () => fetch("https://toy-market-server-fawn.vercel.app/toys"),
       },
       {
         path: "/toys/:id",
@@ -72,7 +73,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(`https://toy-market-server-fawn.vercel.app/toys/${params.id}`),
       },
     ],
   },

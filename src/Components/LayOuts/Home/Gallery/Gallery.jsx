@@ -9,7 +9,7 @@ const Gallery = () => {
     AOS.init({
       duration: 2000, // Animation duration in milliseconds
       easing: "ease-in-out", // Animation easing
-      delay: 200, // Delay between animations in milliseconds
+      delay: 100, // Delay between animations in milliseconds
       offset: 120, // Offset (in pixels) from the element's position before triggering the animation
     });
   }, []);

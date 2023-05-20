@@ -22,21 +22,24 @@ const UpdateToy = () => {
       });
       return;
     }
-    fetch(`http://localhost:5000/toys/${toyInformation._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://toy-market-server-fawn.vercel.app/toys/${toyInformation._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
         if (result.modifiedCount) {
-            Swal.fire({
-                icon: "success",
-                text: "Toy updated Successfully",
-              });
+          Swal.fire({
+            icon: "success",
+            text: "Toy updated Successfully",
+          });
         }
       });
   };

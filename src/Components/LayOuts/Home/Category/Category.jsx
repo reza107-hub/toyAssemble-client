@@ -10,7 +10,7 @@ const Category = () => {
   const [showAllToys, setShowAllToys] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch("https://toy-market-server-fawn.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -73,14 +73,14 @@ const Category = () => {
                     })}
             </div>
             <div className="text-center">
-            {toys.filter((toy) => toy.category === category).length > 3 && (
-              <button
-                onClick={toggleShowAllToys}
-                className="btn btn-primary normal-case mt-4"
-              >
-                {showAllToys ? "Show Less" : "See More"}
-              </button>
-            )}
+              {toys.filter((toy) => toy.category === category).length > 3 && (
+                <button
+                  onClick={toggleShowAllToys}
+                  className="btn btn-primary normal-case mt-4"
+                >
+                  {showAllToys ? "Show Less" : "See More"}
+                </button>
+              )}
             </div>
           </TabPanel>
         ))}

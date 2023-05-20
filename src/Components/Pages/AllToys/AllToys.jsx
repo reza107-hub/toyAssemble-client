@@ -50,7 +50,7 @@ const AllToys = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/toysForLimit?limit=${itemPages}&page=${currentPage}`
+          `https://toy-market-server-fawn.vercel.app/toysForLimit?limit=${itemPages}&page=${currentPage}`
         );
         const data = await response.json();
         setToys(data);

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const AddToy = () => {
   useTitle("Add Toy");
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -41,18 +41,18 @@ const AddToy = () => {
       });
       return;
     }
-    fetch("http://localhost:5000/toys",{
-      method: 'POST',
-      headers:{
-        'content-type':'application/json'
+    fetch("https://toy-market-server-fawn.vercel.app/toys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
         if (result.acknowledged) {
-          navigate('/myToys')
+          navigate("/myToys");
           Swal.fire({
             icon: "success",
             text: "Toy Added Successfully",

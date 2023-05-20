@@ -11,14 +11,16 @@ const MyToy = () => {
   const [sortBy, setSortBy] = useState("ascending");
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/toysQuery?email=${user?.email}&sortBy=${sortBy}`)
+    fetch(
+      `https://toy-market-server-fawn.vercel.app/toysQuery?email=${user?.email}&sortBy=${sortBy}`
+    )
       .then((response) => response.json())
       .then((data) => setToys(data))
       .catch((error) => console.log(error));
   }, [sortBy, user?.email]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/toys/${id}`, {
+    fetch(`https://toy-market-server-fawn.vercel.app/toys/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
