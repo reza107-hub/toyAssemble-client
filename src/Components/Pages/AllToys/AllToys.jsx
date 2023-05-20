@@ -3,8 +3,10 @@ import { BsSearch } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../../useTitle";
 
 const AllToys = () => {
+  useTitle('All Toys')
   const [toys, setToys] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const { user } = useContext(AuthContext);

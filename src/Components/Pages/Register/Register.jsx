@@ -3,7 +3,9 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../../useTitle";
 const Register = () => {
+  useTitle('Register')
   const { createUser, updateProf } = useContext(AuthContext);
   const {
     register,

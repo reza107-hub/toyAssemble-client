@@ -1,6 +1,8 @@
 import { Link, useRouteError } from "react-router-dom";
+import useTitle from "../../../useTitle";
 
 const ErrorPage = () => {
+  useTitle('Error')
   const { error } = useRouteError();
   return (
     <section className="flex items-center h-screen p-16 bg-gray-100 text-gray-900">

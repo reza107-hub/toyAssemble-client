@@ -1,4 +1,7 @@
+import useTitle from "../../../useTitle";
+
 const Blogs = () => {
+  useTitle('Blogs')
   const blogs = [
     {
       title:

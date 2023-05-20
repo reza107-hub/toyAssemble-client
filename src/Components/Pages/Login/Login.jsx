@@ -4,7 +4,9 @@ import { FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../../useTitle";
 const Login = () => {
+  useTitle('Login')
   const { signIn, logInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();

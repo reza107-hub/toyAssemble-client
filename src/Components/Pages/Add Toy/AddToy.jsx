@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
+import useTitle from "../../../useTitle";
 
 const AddToy = () => {
+  useTitle('Add Toy')
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
@@ -31,18 +33,18 @@ const AddToy = () => {
         <div className="mb-4">
           <label htmlFor="subCategory" className="block mb-2 text-accent">Sub-category</label>
           <select id="subCategory" {...register("sub_category")} className="border border-gray-400 p-2 w-full text-neutral">
-            <option value="Math Toys">Math Toys</option>
-            <option value="Language Toys">Language Toys</option>
-            <option value="Science Toys">Science Toys</option>
+            <option value="X Man">X Man</option>
+            <option value="Avengers">Avengers</option>
+            <option value="Fantastic Four">Fantastic Four</option>
           </select>
         </div>
         <div className="mb-4">
           <label htmlFor="price" className="block mb-2 text-accent">Price</label>
-          <input type="number" id="price" {...register("price")} className="border border-gray-400 p-2 w-full text-neutral" />
+          <input type="text" id="price" {...register("price")} className="border border-gray-400 p-2 w-full text-neutral" />
         </div>
         <div className="mb-4 ">
           <label htmlFor="rating" className="block mb-2 text-accent">Rating</label>
-          <input type="number" id="rating" {...register("rating")} className="border border-gray-400 p-2 w-full text-neutral" />
+          <input type="text" id="rating" {...register("rating")} className="border border-gray-400 p-2 w-full text-neutral" />
         </div>
         <div className="mb-4">
           <label htmlFor="quantity" className="block mb-2 text-accent">Available Quantity</label>

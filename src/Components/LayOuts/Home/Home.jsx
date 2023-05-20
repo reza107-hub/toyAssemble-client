@@ -1,3 +1,4 @@
+import useTitle from "../../../useTitle";
 import Banner from "./Banner/Banner";
 import Category from "./Category/Category";
 import Gallery from "./Gallery/Gallery";
@@ -6,7 +7,7 @@ import Service from "./Service/Service";
 
 
 const Home = () => {
-  
+  useTitle('Home')
   return (
     <div className="bg-slate-50">
       <Banner />
