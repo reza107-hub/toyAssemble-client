@@ -12,6 +12,9 @@ This project is a client-side web application that focuses on creating an intera
 
 - **Addition of New Toys:** The project provides a user-friendly form for adding new toys to the inventory. Fields include picture URL, name, seller name (if applicable), seller email (if applicable), sub-category, price, rating, available quantity, and description.
 
+- **Responsive design:** Ensure that the website is responsive and adapts well to different screen sizes, providing an optimal viewing experience on both desktop and mobile devices.
+
+
 ## Live Link
 
 [Add your client-side live link to your website here]

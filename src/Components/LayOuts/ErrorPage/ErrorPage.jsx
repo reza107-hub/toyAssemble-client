@@ -11,6 +11,8 @@ const ErrorPage = () => {
           src="https://giphy.com/embed/DHBGehJ3FSZEygszX3"
           width="100%"
           height="100%"
+          className="md:h-96"
+          style={{ pointerEvents: "none" }}
         ></iframe>
 
         <div className="max-w-md text-center">

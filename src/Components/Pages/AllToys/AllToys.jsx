@@ -1,16 +1,33 @@
 import { useState, useEffect, useContext } from "react";
 import { BsSearch } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import useTitle from "../../../useTitle";
 
 const AllToys = () => {
-  useTitle('All Toys')
+  useTitle("All Toys");
   const [toys, setToys] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(0);
+  const [itemPages, setItemPages] = useState(20);
+
+  const options = [10, 15, 20, 30];
+  const handleItemsPerPageChange = (event) => {
+    const value = parseInt(event.target.value);
+    setItemPages(value);
+    setCurrentPage(0);
+  };
+  const { totalToys } = useLoaderData();
+  const totalPages = Math.ceil(totalToys / itemPages);
+  const pageNumbers = [...Array(totalPages).keys()];
+
+  const handlePaginationClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
   };
@@ -30,11 +47,20 @@ const AllToys = () => {
     }
   };
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
-      .then((response) => response.json())
-      .then((data) => setToys(data))
-      .catch((error) => console.log(error));
-  }, []);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/toysForLimit?limit=${itemPages}&page=${currentPage}`
+        );
+        const data = await response.json();
+        setToys(data);
+      } catch (error) {
+        console.error("Error fetching toys:", error);
+      }
+    };
+
+    fetchData();
+  }, [itemPages, currentPage]);
 
   return (
     <div className="container my-20 mx-auto py-8">
@@ -57,6 +83,7 @@ const AllToys = () => {
         <table className="min-w-full bg-white">
           <thead>
             <tr>
+              <th className="text-accent py-2 px-4 border-b">Sl no.</th>
               <th className="text-accent py-2 px-4 border-b">Seller</th>
               <th className="text-accent py-2 px-4 border-b">Toy Name</th>
               <th className="text-accent py-2 px-4 border-b">Sub-category</th>
@@ -68,8 +95,9 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredToys.map((toy) => (
+            {filteredToys.map((toy, index) => (
               <tr className="text-center" key={toy._id}>
+                <td className="py-2 px-4 text-neutral border-b">{index + 1}</td>
                 <td className="py-2 px-4 text-neutral border-b">
                   {toy.seller}
                 </td>
@@ -93,6 +121,31 @@ const AllToys = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <p className="text-center text-neutral mt-5">
+        current page: {currentPage + 1}
+      </p>
+      <div className="mt-5 text-center text-neutral flex justify-center">
+        {pageNumbers.map((number) => (
+          <button
+            onClick={() => handlePaginationClick(number)}
+            className={`${
+              currentPage === number ? "btn-active" : ""
+            } ml-4 btn btn-primary btn-outline`}
+            key={number}
+          >
+            {number + 1}
+          </button>
+        ))}
+        <div className="ml-5">
+          <select value={itemPages} onChange={handleItemsPerPageChange}>
+            {options.map((option) => (
+              <option className="text-neutral" key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
     </div>
   );

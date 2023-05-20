@@ -4,8 +4,11 @@ import "react-tabs/style/react-tabs.css";
 import XmanToy from "./xManToy";
 import FantasticFour from "./FantasticFour";
 import Avenger from "./Avenger.jsx";
+
 const Category = () => {
   const [toys, setToys] = useState([]);
+  const [showAllToys, setShowAllToys] = useState(false);
+
   useEffect(() => {
     fetch("http://localhost:5000/toys")
       .then((res) => res.json())
@@ -13,11 +16,13 @@ const Category = () => {
         setToys(data);
       });
   }, []);
-  const xManToys = toys.filter((toy) => toy.category == "X Man");
-  const avengersToys = toys.filter((toy) => toy.category == "Avengers");
-  const fantasticFourToys = toys.filter(
-    (toy) => toy.category == "Fantastic Four"
-  );
+
+  const categories = [...new Set(toys.map((toy) => toy.category))];
+
+  const toggleShowAllToys = () => {
+    setShowAllToys(!showAllToys);
+  };
+
   return (
     <div>
       <div className="mt-20">
@@ -28,32 +33,57 @@ const Category = () => {
       </div>
       <Tabs className="mt-20 w-[80%] mx-auto">
         <TabList className="text-center text-neutral border">
-          <Tab>X-Man</Tab>
-          <Tab>Avengers</Tab>
-          <Tab>Fantastic Four</Tab>
+          {categories.map((category) => (
+            <Tab key={category}>{category}</Tab>
+          ))}
         </TabList>
 
-        <TabPanel>
-          <div className="flex flex-wrap gap-5 justify-around mt-2">
-            {xManToys.map((toy) => (
-              <XmanToy key={toy._id} toy={toy} />
-            ))}
-          </div>
-        </TabPanel>
-        <TabPanel>
-          <div className="flex flex-wrap gap-5 justify-around mt-2">
-            {avengersToys.map((toy) => (
-              <Avenger key={toy._id} toy={toy} />
-            ))}
-          </div>
-        </TabPanel>
-        <TabPanel>
-          <div className="flex flex-wrap gap-5 justify-around mt-2">
-            {fantasticFourToys.map((toy) => (
-              <FantasticFour key={toy._id} toy={toy} />
-            ))}
-          </div>
-        </TabPanel>
+        {categories.map((category) => (
+          <TabPanel key={category}>
+            <div className="grid md:grid-cols-3 gap-5 justify-around mt-2">
+              {showAllToys
+                ? toys
+                    .filter((toy) => toy.category === category)
+                    .map((toy) => {
+                      switch (category) {
+                        case "X Man":
+                          return <XmanToy key={toy._id} toy={toy} />;
+                        case "Avengers":
+                          return <Avenger key={toy._id} toy={toy} />;
+                        case "Fantastic Four":
+                          return <FantasticFour key={toy._id} toy={toy} />;
+                        default:
+                          return null;
+                      }
+                    })
+                : toys
+                    .filter((toy) => toy.category === category)
+                    .slice(0, 3)
+                    .map((toy) => {
+                      switch (category) {
+                        case "X Man":
+                          return <XmanToy key={toy._id} toy={toy} />;
+                        case "Avengers":
+                          return <Avenger key={toy._id} toy={toy} />;
+                        case "Fantastic Four":
+                          return <FantasticFour key={toy._id} toy={toy} />;
+                        default:
+                          return null;
+                      }
+                    })}
+            </div>
+            <div className="text-center">
+            {toys.filter((toy) => toy.category === category).length > 3 && (
+              <button
+                onClick={toggleShowAllToys}
+                className="btn btn-primary normal-case mt-4"
+              >
+                {showAllToys ? "Show Less" : "See More"}
+              </button>
+            )}
+            </div>
+          </TabPanel>
+        ))}
       </Tabs>
     </div>
   );

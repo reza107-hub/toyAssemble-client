@@ -3,10 +3,12 @@ import Swal from "sweetalert2";
 import useTitle from "../../../useTitle";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const AddToy = () => {
   useTitle("Add Toy");
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -50,6 +52,7 @@ const AddToy = () => {
       .then((result) => {
         console.log(result);
         if (result.acknowledged) {
+          navigate('/myToys')
           Swal.fire({
             icon: "success",
             text: "Toy Added Successfully",

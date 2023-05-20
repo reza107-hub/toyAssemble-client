@@ -21,9 +21,9 @@ const XmanToy = ({ toy }) => {
   };
   return (
     <div>
-      <div className="card md:w-[400px] border border-info py-4 bg-slate-100 text-neutral font-serif">
+      <div className="card h-[400px] border border-info py-4 bg-slate-100 text-neutral font-serif">
         <figure className="px-10 pt-10">
-          <img src={toy.image} alt="" className="rounded-xl h-48 w-48" />
+          <img src={toy.image} alt="" className="rounded-xl h-48 w-40" />
         </figure>
         <div className="card-body">
           <h2 className="card-title font text-accent">{toy.name}</h2>

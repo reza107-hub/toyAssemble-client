@@ -8,13 +8,14 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 const MyToy = () => {
   useTitle("MY Toys");
   const [toys, setToys] = useState([]);
+  const [sortBy, setSortBy] = useState("ascending");
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/toysQuery?email=${user?.email}`)
+    fetch(`http://localhost:5000/toysQuery?email=${user?.email}&sortBy=${sortBy}`)
       .then((response) => response.json())
       .then((data) => setToys(data))
       .catch((error) => console.log(error));
-  }, [toys, user?.email]);
+  }, [sortBy, user?.email]);
 
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/toys/${id}`, {
@@ -39,7 +40,19 @@ const MyToy = () => {
       <h1 className="text-3xl font-bold text-center text-primary mb-8">
         My Toys
       </h1>
-
+      <div className="flex justify-end mb-4">
+        <label htmlFor="sortBy" className="mr-2 text-secondary">
+          Sort By:
+        </label>
+        <select
+          id="sortBy"
+          className="px-2 py-1 border border-secondary rounded text-neutral"
+          onChange={(e) => setSortBy(e.target.value)}
+        >
+          <option value="ascending">Ascending</option>
+          <option value="descending">Descending</option>
+        </select>
+      </div>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white">
           <thead>
