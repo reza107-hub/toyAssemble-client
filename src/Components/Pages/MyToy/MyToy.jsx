@@ -20,21 +20,35 @@ const MyToy = () => {
   }, [sortBy, user?.email]);
 
   const handleDelete = (id) => {
-    fetch(`https://toy-market-server-fawn.vercel.app/toys/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        if (result.deletedCount) {
-          Swal.fire({
-            icon: "success",
-            text: "Toy deleted Successfully",
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#FF5722",
+      cancelButtonColor: "#00BCD4",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://toy-market-server-fawn.vercel.app/toys/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+            if (result.deletedCount) {
+              Swal.fire(
+                "Deleted!",
+                "Toy deleted Successfully",
+                "success",
+                "#FF5722"
+              );
+            }
+            const remaining = toys.filter((toy) => toy._id !== id);
+            setToys(remaining);
           });
-        }
-        const remaining = toys.filter((toy) => toy._id !== id);
-        setToys(remaining);
-      });
+      }
+    });
   };
 
   return (
@@ -75,7 +89,7 @@ const MyToy = () => {
                 <td className="py-2 px-4 text-neutral border-b">
                   <button
                     onClick={() => handleDelete(toy._id)}
-                    className="text-secondary font-medium"
+                    className="text-secondary font-bold text-2xl"
                   >
                     <MdOutlineRemoveCircle />
                   </button>

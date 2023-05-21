@@ -11,7 +11,7 @@ const Service = () => {
     });
   }, []);
   return (
-    <div className="mt-20 md:w-[80%] mx-auto">
+    <div className="mt-40 container mx-auto">
       <p className="text-primary my-10 text-4xl font-bold text-center">
         Our service
       </p>

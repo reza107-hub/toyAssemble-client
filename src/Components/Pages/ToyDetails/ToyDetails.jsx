@@ -29,8 +29,8 @@ const ToyDetails = () => {
           className="w-64 h-64 md:h-[500px] md:w-[50%] mb-4"
         />
 
-        <div className="md:w-[1200px]">
-          <h2 className="text-3xl font-bold text-primary mb-2">{name}</h2>
+        <div className="md:w-[1200px] flex flex-col items-center md:items-start px-2 md:px-0">
+          <h2 className="md:text-3xl text-2xl font-bold text-primary text-center md:text-left mb-2">{name}</h2>
           <p className="text-gray-600 mb-2">
             <span className="font-bold ">Seller:</span> {seller}
           </p>

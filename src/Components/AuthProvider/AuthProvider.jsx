@@ -39,15 +39,6 @@ const AuthProvider = ({ children }) => {
   const logOut = () => {
     signOut(auth);
   };
-  useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (loggedUser) => {
-      setUser(loggedUser);
-      setLoading(false);
-    });
-    return () => {
-      return unSubscribe();
-    };
-  }, []);
   const authInfo = {
     user,
     loading,
@@ -56,7 +47,21 @@ const AuthProvider = ({ children }) => {
     updateProf,
     logInWithGoogle,
     logOut,
+    setLoading
   };
+
+  useEffect(() => {
+    const unSubscribe = onAuthStateChanged(auth, (loggedUser) => {
+      setUser(loggedUser);
+
+      setLoading(false);
+      console.log(loggedUser);
+    });
+    return () => {
+      unSubscribe();
+    };
+  }, []);
+
   return (
     <div>
       <div>

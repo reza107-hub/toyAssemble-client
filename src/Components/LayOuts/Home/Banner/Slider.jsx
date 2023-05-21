@@ -23,7 +23,7 @@ export default function Slider() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="md:flex relative justify-center items-center md:gap-24 md:w-[80%] mx-auto md:p-10">
+          <div className="md:flex relative justify-center items-center md:gap-24  container mx-auto md:p-10">
             <div>
               <img
                 className="w-full h-[500px] rounded-lg"

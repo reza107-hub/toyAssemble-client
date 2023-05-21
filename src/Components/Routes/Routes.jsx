@@ -9,7 +9,7 @@ import MyToy from "../Pages/MyToy/MyToy";
 import AddToy from "../Pages/Add Toy/AddToy";
 import Blogs from "../Pages/Blogs/Blogs";
 import PrivateRoute from "./PrivateRoute";
-import ToyDetails from "../Pages/ToyDetailss/ToyDetails";
+import ToyDetails from "../Pages/ToyDetails/ToyDetails";
 import UpdateToy from "../Pages/UpdateToy/UpdateToy";
 
 export const router = createBrowserRouter([

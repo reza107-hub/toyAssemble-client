@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import "./Gallery.css";
 import SingleCard from "./SingleCard";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -8,9 +7,9 @@ const Gallery = () => {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      easing: "ease-in-out", 
-      delay: 150, 
-      offset: 120, 
+      easing: "ease-in-out",
+      delay: 150,
+      offset: 120,
     });
   }, []);
   const toyData = [
@@ -38,13 +37,6 @@ const Gallery = () => {
       imgSrc:
         "https://i.ibb.co/LQwBhVm/Ag-AD9-Ak-AAu-G2-OFc-removebg-preview.png",
       toyName: "Marvel Avengers 10 Piece Bath Toy Value Set",
-    },
-    {
-      id: 5,
-      imgSrc:
-        "https://i.ibb.co/7WrFHn5/Ag-AD9-Qk-AAu-G2-OFc-removebg-preview.png",
-      toyName:
-        "Marvel Avengers Action Figures - Iron Man, Hulk, Black Panther, Captain America, Spider Man, Ant Man, War Machine & Falcon",
     },
     {
       id: 6,
@@ -75,7 +67,7 @@ const Gallery = () => {
   return (
     <div
       data-aos="fade-up"
-      className="w-[80%] mx-auto mt-16 gap-12 grid md:grid-cols-3"
+      className="container mx-auto px-6 mt-16 gap-5 max-w-5xl grid grid-cols-1 md:grid-cols-4"
     >
       {toyData.map((toy) => (
         <SingleCard key={toy.id} toy={toy}></SingleCard>

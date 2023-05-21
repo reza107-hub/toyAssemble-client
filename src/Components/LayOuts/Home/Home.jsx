@@ -1,5 +1,5 @@
 import useTitle from "../../../useTitle";
-import Banner from "./Banner/Banner";
+import Slider from "./Banner/Slider";
 import Category from "./Category/Category";
 import Gallery from "./Gallery/Gallery";
 import OurTeam from "./OurTeam/OurTeam";
@@ -10,9 +10,9 @@ const Home = () => {
   useTitle('Home')
   return (
     <div className="bg-slate-50">
-      <Banner />
+      <Slider />
       <div>
-        <p className="text-primary font-bold text-3xl text-center mt-20">
+        <p className="text-primary font-bold text-3xl text-center mt-36">
           Featured Gallery
         </p>
         <Gallery />

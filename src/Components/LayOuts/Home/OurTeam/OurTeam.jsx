@@ -36,35 +36,30 @@ const OurTeam = () => {
 
   return (
     <div>
-      <h1 className="text-primary text-3xl font-bold text-center mt-32">
+      <h1 className="text-primary text-3xl font-bold text-center mt-36">
         Our Team
       </h1>
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 w-[90%] mx-auto gap-8">
-            {teamMembers.map((member) => (
-              <div
-                data-aos="zoom-in-up"
-                key={member.name}
-                className="border border-info p-8 rounded-lg shadow-lg "
-              >
-                <img
-                  src={member.avatar}
-                  alt={member.name}
-                  className="w-24 h-24 mx-auto mb-4 rounded-full"
-                />
-                <h2 className="text-2xl font-bold text-accent">
-                  {member.name}
-                </h2>
-                <h3 className="text-lg text-gray-500 mb-4">
-                  {member.position}
-                </h3>
-                <p className="text-gray-500 mb-6">{member.quote}</p>
-              </div>
-            ))}
-          </div>
+
+      <div className="py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 container mx-auto gap-8">
+          {teamMembers.map((member) => (
+            <div
+              data-aos="zoom-in-up"
+              key={member.name}
+              className="border border-info p-8 rounded-lg shadow-lg "
+            >
+              <img
+                src={member.avatar}
+                alt={member.name}
+                className="w-24 h-24 mx-auto mb-4 rounded-full"
+              />
+              <h2 className="text-2xl font-bold text-accent">{member.name}</h2>
+              <h3 className="text-lg text-gray-500 mb-4">{member.position}</h3>
+              <p className="text-gray-500 mb-6">{member.quote}</p>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 };

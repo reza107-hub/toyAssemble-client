@@ -57,7 +57,7 @@ const Login = () => {
     <div className="min-h-screen bg-slate-50 md:p-10 p-3 md:flex justify-center items-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" space-y-7 mx-auto my-10 bg-white p-4 md:w-[70vh] rounded-lg"
+        className=" space-y-7 mx-auto my-10 bg-white p-4 md:w-[500px] rounded-lg"
       >
         <div className="form-control">
           <label className="label">
@@ -84,7 +84,7 @@ const Login = () => {
         {errors.exampleRequired && <span>This field is required</span>}
 
         <div className="form-control mt-6">
-          <input className="btn btn-primary" type="submit" value="Login" />
+          <input className="btn btn-primary normal-case" type="submit" value="Login" />
         </div>
         <div>
           <p className="text-neutral">

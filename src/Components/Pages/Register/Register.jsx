@@ -1,12 +1,15 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import useTitle from "../../../useTitle";
 const Register = () => {
-  useTitle('Register')
-  const { createUser, updateProf } = useContext(AuthContext);
+  useTitle("Register");
+  const { createUser, updateProf, setLoading } = useContext(AuthContext);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -14,7 +17,7 @@ const Register = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    if (data.password.length<6) {
+    if (data.password.length < 6) {
       return Swal.fire({
         icon: "error",
         text: "password must contain 6 character",
@@ -27,6 +30,8 @@ const Register = () => {
           icon: "success",
           text: "User Created Successfully",
         });
+        setLoading(false);
+        navigate(from, { replace: true });
         console.log(result.user);
       })
       .catch((error) => {
@@ -41,7 +46,7 @@ const Register = () => {
     <div className="min-h-screen bg-slate-50 md:p-10 p-3 md:flex justify-center items-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" space-y-7 mx-auto my-10 bg-white p-4 md:w-[70vh] rounded-lg"
+        className=" space-y-7 mx-auto my-10 bg-white p-4 md:w-[600px] rounded-lg"
       >
         <div className="form-control">
           <label className="label">
@@ -90,7 +95,7 @@ const Register = () => {
         {errors.exampleRequired && <span>This field is required</span>}
 
         <div className="form-control mt-6">
-          <input className="btn btn-primary" type="submit" value="Register" />
+          <input className="btn btn-primary normal-case" type="submit" value="Register" />
         </div>
         <div>
           <p className="text-neutral">

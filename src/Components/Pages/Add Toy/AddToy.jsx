@@ -16,12 +16,19 @@ const AddToy = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const { price, rating } = data;
+    const { price, rating, quantity } = data;
 
     if (!price || isNaN(parseInt(price))) {
       Swal.fire({
         icon: "error",
         text: "Please input a valid price",
+      });
+      return;
+    }
+    if (!quantity || isNaN(parseInt(quantity))) {
+      Swal.fire({
+        icon: "error",
+        text: "Please input a valid quantity",
       });
       return;
     }
@@ -169,7 +176,7 @@ const AddToy = () => {
             Available Quantity
           </label>
           <input
-            type="number"
+            type="text"
             id="quantity"
             {...register("quantity", { required: true })}
             className="border border-gray-400 p-2 w-full text-neutral"

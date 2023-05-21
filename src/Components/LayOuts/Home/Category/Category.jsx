@@ -34,13 +34,13 @@ const Category = () => {
   }, []);
   return (
     <div>
-      <div className="mt-20">
+      <div className="mt-40">
         <p className="font-bold text-center text-accent font">TOP CATEGORIES</p>
         <p className="text-3xl text-center mt-3 text-primary font-bold font-serif">
           Toys By Categories
         </p>
       </div>
-      <Tabs className="mt-20 w-[80%] mx-auto">
+      <Tabs className="mt-20 container mx-auto">
         <TabList className="text-center text-neutral border">
           {categories.map((category) => (
             <Tab key={category}>{category}</Tab>
@@ -51,7 +51,7 @@ const Category = () => {
           <TabPanel key={category}>
             <div
               data-aos="fade-up"
-              className="grid md:grid-cols-3 gap-5 justify-around mt-2"
+              className="container mx-auto grid md:grid-cols-3 gap-32 justify-around mt-2"
             >
               {showAllToys
                 ? toys

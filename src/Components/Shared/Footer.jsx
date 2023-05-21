@@ -79,35 +79,35 @@ const Footer = () => {
         </p>
         <div className="flex space-x-4 mt-4">
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/aminurrashidrezaarr"
             target="_blank"
             rel="noopener noreferrer"
           >
             <BsFacebook />
           </a>
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/reza_8k/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaInstagramSquare />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/reza107-hub"
             target="_blank"
             rel="noopener noreferrer"
           >
             <BsGithub />
           </a>
           <a
-            href="https://twitter.com"
+            href="https://twitter.com/Reza6f9"
             target="_blank"
             rel="noopener noreferrer"
           >
             <BsTwitter />
           </a>
           <a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/in/aminur-rashid-reza-213a00266"
             target="_blank"
             rel="noopener noreferrer"
           >
