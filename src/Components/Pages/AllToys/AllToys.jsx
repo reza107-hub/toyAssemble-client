@@ -96,22 +96,22 @@ const AllToys = () => {
           </thead>
           <tbody>
             {filteredToys.map((toy, index) => (
-              <tr className="text-center" key={toy._id}>
+              <tr className="text-center" key={toy?._id}>
                 <td className="py-2 px-4 text-neutral border-b">{index + 1}</td>
                 <td className="py-2 px-4 text-neutral border-b">
                   {toy.seller}
                 </td>
-                <td className="py-2 px-4 text-neutral border-b">{toy.name}</td>
+                <td className="py-2 px-4 text-neutral border-b">{toy?.name}</td>
                 <td className="py-2 px-4 text-neutral border-b">
                   {toy.category}
                 </td>
-                <td className="py-2 px-4 text-neutral border-b">{toy.price}</td>
+                <td className="py-2 px-4 text-neutral border-b">{toy?.price}</td>
                 <td className="py-2 px-4 text-neutral border-b">
                   {toy.quantity}
                 </td>
                 <td className="py-2 px-4 text-neutral border-b">
                   <button
-                    onClick={() => userLoggedInOrNot(toy._id)}
+                    onClick={() => userLoggedInOrNot(toy?._id)}
                     className="text-secondary font-medium"
                   >
                     View Details
